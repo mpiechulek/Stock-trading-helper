@@ -19,6 +19,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { AuthenticationService } from './core/services/auth/authentication.service';
 import { fakeBackendProvider } from './core/utils/fake-backend';
+import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { fakeBackendProvider } from './core/utils/fake-backend';
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    })   
   ],
 
   providers: [
