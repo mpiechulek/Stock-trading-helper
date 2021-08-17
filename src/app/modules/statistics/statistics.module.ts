@@ -25,6 +25,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatHeaderComponent } from './components/statistics/stat-chart/stat-header/stat-header.component';
 import { MatButtonModule } from '@angular/material/button';
+import { StoreModule } from '@ngrx/store';
+import { StatisticsReducer } from './store/reducers/statistics.recucer';
 @NgModule({
   declarations: [
     StatisticsContainerComponent,
@@ -54,6 +56,9 @@ import { MatButtonModule } from '@angular/material/button';
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
+    }),
+    StoreModule.forRoot({
+      windowContent: StatisticsReducer
     })
 
   ]
