@@ -9,6 +9,14 @@ export enum StatisticsWindowActionTypes {
 
 }
 
-export class SwitchStatisticsSubsections implements Action {
+export class ChoseHartSubSectionAction implements Action {
+
+    readonly type = StatisticsWindowActionTypes.CHOSE_HARTS;
+
+    constructor(public payload:StatisticsWindows){
+
+    }
     
 }
+
+export type StatisticsActions = ChoseHartSubSectionAction
